@@ -5,12 +5,13 @@ import styles from '../styles/Home.module.css'
 import { Button, Flex, Text } from '@chakra-ui/react'
 import vector from "../assets/svg/Vector 2.svg"
 import siteMockup from "../assets/png/Screenshot_10 1.png"
+import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
    <Flex w='100vw' h='100vh' maxW='1920px' bgColor={"#272727"}>
-    <Image style={{position:'fixed', transform:'scale(1)',bottom:'0', zIndex:'1'}} src={vector}></Image>
+    <Image style={{position:'fixed', transform:'scale(1)',bottom:'0', zIndex:'1'}} src={vector}/>
     <Flex w='100%' h='100%' p='3rem' flexDir='column'>
       <Flex w='100%' h='80px' justify='center' align='center'>
         <Flex fontFamily='Lilita One'>
@@ -32,7 +33,7 @@ export default function Home() {
               <Button fontSize='40px' h='77px' w='267px' _hover={{
                 bgColor:'white',
                 color:'#D8562D'
-              }} color='white' bgColor='transparent' fontWeight='Normal' border='2px solid white' borderRadius='16px'>Launch App</Button>
+              }} color='white' bgColor='transparent' fontWeight='Normal' border='2px solid white' borderRadius='16px'><Link href={'/app'}>Launch App</Link></Button>
               <Button fontSize='40px' h='77px' w='267px' color='#D8562D'  fontWeight='Normal' border='2px solid white' borderRadius='16px'>Second One</Button>
             </Flex>
           </Flex>
