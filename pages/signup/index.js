@@ -5,10 +5,7 @@ import Logo from "../../components/Logo"
 import SignupForm from "../../components/SİgnupForm/SignupForm"
 
 
-
-
 const Signup = () => {
-
 
     return(
    <Flex w='100vw' h='100vh' maxW='1920px' bgColor={"#272727"} flexDir='column'>
