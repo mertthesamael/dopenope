@@ -15,7 +15,7 @@ const Signup = () => {
         </Flex>
         <Flex justify='center' align='center' w='100%' h='100%' zIndex='2'>
             <Flex w='572px' boxShadow='0px 4px 4px rgba(0, 0, 0, 0.25)' h='627px' background='rgba(217, 217, 217, 0.15)' backdropFilter={'blur(18.5px)'} borderRadius='47px'>
-                <Flex h='100%' w='100%' p='5rem'>
+                <Flex h='100%' align='center' w='100%' p='0 5rem'>
                 <SignupForm/>
                 </Flex>
             </Flex>
