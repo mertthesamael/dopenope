@@ -4,7 +4,8 @@ import { useCallback, useEffect, useState } from "react"
 import Cropper from "react-easy-crop"
 import getCroppedImg from '../../config/cropImg'
 import { AddIcon } from "@chakra-ui/icons"
-
+import {storage} from "../../config/firebase"
+import { ref, uploadBytes } from "firebase/storage"
 
 const SignupForm = () => {
 
@@ -63,6 +64,19 @@ const SignupForm = () => {
       }
     }, [croppedAreaPixels, rotation])
     
+    //Testing function for firebase storage
+    //IT'S Working
+    //Firebase config files deleted, import them to work.
+    const uploadImage = async() => {
+      console.log(croppedImage.blob)
+      const imgRef = ref(storage, 'images/test.png')
+      const img = await fetch(croppedImage).then(r => r.blob())
+      uploadBytes(imgRef, img).then((e) => {
+
+      })
+      
+      
+    }
     return(
         <form onSubmit={formHandler} style={{display:'flex',flexDirection:'column', justifyContent:'center', gap:'2rem', width:'100%', padding:'1rem'}}>
             <Input name='fullName' bgColor='white' fontFamily='Fredoka' placeholder='Full Name'/>
@@ -91,6 +105,7 @@ const SignupForm = () => {
               </Flex>
             </label>
             <Button type='submit'>Create an Account</Button>
+            <Button onClick={uploadImage}>Upload Image</Button>
            {<Button pos='relative' top='3rem' zIndex='25' onClick={showCroppedImage}>Crop Img</Button>}
         </form>
     )
